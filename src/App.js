@@ -1,6 +1,9 @@
 
 import './App.css';
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import AxiosInterceptorProvider from './interceptors/axiosInterceptorProvider';
+import Router from './router';
+import ScrollToTop from "./ScrollToTop";
 
 function AppContent() {
 
