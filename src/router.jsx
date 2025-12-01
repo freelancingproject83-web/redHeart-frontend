@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import AppLayout from "./comman/app-layout/app-layout";
 // import logoImage from "./assets/yobhaLogo.png"
 // Lazy load pages
-const Home = lazy(() => import("./pages/Home/home2"));
+const Home = lazy(() => import("./pages/home/home"));
 const logoImage ="s"
 const Router = () => {
   const routes = [
