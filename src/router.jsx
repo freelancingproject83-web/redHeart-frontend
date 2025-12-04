@@ -4,12 +4,13 @@ import AppLayout from "./comman/app-layout/app-layout";
 // import logoImage from "./assets/yobhaLogo.png"
 // Lazy load pages
 const Home = lazy(() => import("./pages/home/home"));
+const Login = lazy(() => import("./pages/login/login"));
 const logoImage ="s"
 const Router = () => {
   const routes = [
     // { path: "/", element: <Navigate to="/home" replace /> },
     { path: "/", element: <Home /> },
-
+    {path: "/login", element: <Login />},
     { path: "/home", element: <Home /> },
   ];
 
