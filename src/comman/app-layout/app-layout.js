@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../app-header/app-header";
-// import Footer from "../footer/footer";
+import Footer from "../footer/footer";
 
 const AppLayout = ({ children }) => {
  
@@ -8,7 +8,7 @@ const AppLayout = ({ children }) => {
     <div className="app-layout">
       <Header />
       <main  className="md:pt-240px lg:pt-240px">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
