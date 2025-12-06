@@ -122,10 +122,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-primary-white/98 backdrop-blur-md shadow-elegant border-b border-grey-100"
-            : "bg-primary-white border-b border-grey-100"
+        className={`sticky top-0 z-50 bg-primary-white border-b border-grey-100 transition-all duration-500 ${
+          isScrolled ? "shadow-elegant" : ""
         }`}
       >
         <nav className="w-full">

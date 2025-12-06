@@ -76,19 +76,24 @@ module.exports = {
         info: '#3B82F6',
       },
       fontFamily: {
-        // Premium serif fonts for headings - elegant and sophisticated
+        // Premium sans-serif fonts for headings - modern and elegant
         display: [
-          'Playfair Display',
-          'Cormorant Garamond',
-          'Lora',
-          'Merriweather',
-          'serif',
+          'Helvetica Neue',
+          'Helvetica',
+          'Arial',
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'sans-serif',
         ],
         // Clean sans-serif for body text - modern and readable
         body: [
+          'Helvetica Neue',
+          'Helvetica',
+          'Arial',
           'Inter',
           'Poppins',
-          'Lato',
           '-apple-system',
           'BlinkMacSystemFont',
           'Segoe UI',
@@ -104,6 +109,9 @@ module.exports = {
         ],
         // Sans-serif alternative for UI elements
         sans: [
+          'Helvetica Neue',
+          'Helvetica',
+          'Arial',
           'Inter',
           'Poppins',
           '-apple-system',
