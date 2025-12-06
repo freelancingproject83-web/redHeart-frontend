@@ -234,6 +234,14 @@ export default function Header() {
 
               {/* User Account */}
               <button
+                onClick={() => {
+                  const authToken = localStorage.getItem("authToken");
+                  if (authToken) {
+                    navigate("/my-account");
+                  } else {
+                    navigate("/login");
+                  }
+                }}
                 className="p-2.5 rounded-full text-black-charcoal hover:text-accent-rose-600 hover:bg-grey-50 transition-all duration-300 group relative"
                 aria-label="Account"
               >
@@ -407,6 +415,16 @@ export default function Header() {
                 <span className="text-xs font-body font-medium">Cart</span>
               </button>
               <button
+                onClick={() => {
+                  const authToken = localStorage.getItem("authToken");
+                  if (authToken) {
+                    navigate("/my-account");
+                    setOpen(false);
+                  } else {
+                    navigate("/login");
+                    setOpen(false);
+                  }
+                }}
                 className="flex flex-col items-center justify-center space-y-2 px-3 py-4 bg-gradient-to-br from-grey-50 to-grey-100/50 hover:from-accent-rose-50 hover:to-accent-pink-50 rounded-xl transition-all duration-300 text-grey-700 hover:text-accent-rose-600 group"
                 aria-label="Account"
               >

@@ -21,6 +21,8 @@ const Cookies = lazy(() => import("./pages/cookies/cookies"));
 const RefundPolicy = lazy(() => import("./pages/refund-policy/refund-policy"));
 const Cart = lazy(() => import("./pages/cart/cart"));
 const Checkout = lazy(() => import("./pages/checkout/checkout"));
+const MyAccount = lazy(() => import("./pages/my-account/my-account"));
+const Orders = lazy(() => import("./pages/orders/orders"));
 const logoImage ="s"
 const Router = () => {
   const routes = [
@@ -44,6 +46,8 @@ const Router = () => {
     {path: "/refund-policy", element: <RefundPolicy />},
     {path: "/cart", element: <Cart />},
     {path: "/checkout", element: <Checkout />},
+    {path: "/my-account", element: <MyAccount />},
+    {path: "/orders", element: <Orders />},
   ];
 
   return (
