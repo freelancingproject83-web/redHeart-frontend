@@ -44,11 +44,11 @@ const ProductDescription = () => {
       "origin": "Netherlands"
     },
     "media": {
-      "primary_image_url": "https://example.com/images/redrose_primary.jpg",
+      "primary_image_url":"https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
       "gallery_images": [
-        "https://example.com/images/redrose_full_view.jpg",
-        "https://example.com/images/redrose_close_up.jpg",
-        "https://example.com/images/redrose_packaging.jpg"
+        "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+        "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+       "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50"
       ]
     },
     "metrics": {
@@ -77,16 +77,17 @@ const ProductDescription = () => {
           "quantity": 1,
           "original_price": 20,
           "selling_price": 20,
-          "image_url": "https://example.com/images/addon_vase.jpg",
+          "image_url": "https://imgcdn.floweraura.com/teddy-love-with-red-roses-bouquet-9813480co-A_0.jpg?tr=w-400,dpr-1.5&q=50",
           "_id": "692ca762d374d60a8c63cd4a"
         },
+        
         {
           "name": "Luxury Chocolates",
           "product_id": "CHOCO-005",
           "quantity": 1,
           "original_price": 25,
           "selling_price": 22.5,
-          "image_url": "https://example.com/images/addon_chocolates.jpg",
+          "image_url": "https://imgcdn.floweraura.com/teddy-love-with-red-roses-bouquet-9813480co-A_0.jpg?tr=w-400,dpr-1.5&q=50",
           "_id": "692ca762d374d60a8c63cd4b"
         }
       ]

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import { ArrowRight, Heart, Sparkles } from "lucide-react";
 
 // Import images
@@ -25,8 +25,10 @@ import allFlowerComboImg from "../../assets/floral-image/all-flower-combo.avif";
 import congratulationImg from "../../assets/occasion-image/congratulation.jpg";
 import thankYouImg from "../../assets/occasion-image/thank-you.jpeg";
 import getWellSoonImg from "../../assets/occasion-image/get-well-soon.webp";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const collections = [
     { id: 1, title: "Best Sellers", image: bestSellerImg, description: "Our most loved arrangements" },
     { id: 2, title: "Love & Affection", image: loveAffectionImg, description: "Express your deepest emotions" },
@@ -114,9 +116,10 @@ const Home = () => {
             {collections.map((collection) => (
               <div
                 key={collection.id}
+                
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden">
+                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${collection.title}`)}>
                   <img
                     src={collection.image}
                     alt={collection.title}
@@ -159,7 +162,7 @@ const Home = () => {
                 key={blossom.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-32 sm:h-40 md:h-80 overflow-hidden">
+                <div className="relative h-32 sm:h-40 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${blossom.title}`)}>
                   <img
                     src={blossom.image}
                     alt={blossom.title}
@@ -200,7 +203,7 @@ const Home = () => {
                 key={flower.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden">
+                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden"   onClick={() => navigate(`/product/${flower.title}`)}>
                   <img
                     src={flower.image}
                     alt={flower.title}
@@ -240,7 +243,7 @@ const Home = () => {
                 key={item.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden">
+                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${item.title}`)}>
                   <img
                     src={item.image}
                     alt={item.title}
@@ -281,7 +284,7 @@ const Home = () => {
                 key={occasion.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden">
+                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden"   onClick={() => navigate(`/product/${occasion.title}`)}>
                   <img
                     src={occasion.image}
                     alt={occasion.title}

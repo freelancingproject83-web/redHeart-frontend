@@ -202,7 +202,7 @@ export default function Header() {
                         {menu.items.map((item, i) => (
                           <li key={i}>
                             <a
-                              href="#"
+                              href={`/product/${item}`}
                               className="block px-4 py-3 text-sm font-body text-grey-700 hover:text-accent-rose-600 hover:bg-gradient-to-r hover:from-accent-rose-50/50 hover:to-accent-pink-50/50 rounded-lg transition-all duration-200 border-l-2 border-transparent hover:border-accent-rose-300"
                             >
                               {item}

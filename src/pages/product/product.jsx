@@ -22,11 +22,11 @@ const Product = () => {
   const [productData, setProductData] = useState([
     {
       media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cd47",
@@ -44,11 +44,11 @@ const Product = () => {
     },
     {
       media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cssd47",
@@ -66,11 +66,11 @@ const Product = () => {
     },
     {
       media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cd48",
@@ -87,12 +87,12 @@ const Product = () => {
         "The classic choice for eternal love, featuring large heads and an incredible 10+ day vase life.",
     },
     {
-      media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+     media: {
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cd49",
@@ -110,11 +110,11 @@ const Product = () => {
     },
     {
       media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cd50",
@@ -132,11 +132,11 @@ const Product = () => {
     },
     {
       media: {
-        primary_image_url: "https://example.com/images/redrose_primary.jpg",
+        primary_image_url: "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         gallery_images: [
-          "https://example.com/images/redrose_full_view.jpg",
-          "https://example.com/images/redrose_close_up.jpg",
-          "https://example.com/images/redrose_packaging.jpg",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
+          "https://imgcdn.floweraura.com/IMG_6360.jpg?tr=w-400,dpr-1.5&q=50",
         ],
       },
       _id: "692ca762d374d60a8c63cd51",
