@@ -263,6 +263,10 @@ const ProductDescription = () => {
     }
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
+    
+    // Dispatch event to update cart count in header
+    window.dispatchEvent(new CustomEvent("cartCountUpdated"));
+    
     alert("Added to cart!");
   };
 

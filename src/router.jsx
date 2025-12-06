@@ -19,6 +19,8 @@ const GiftCards = lazy(() => import("./pages/gift-cards/gift-cards"));
 const SizeGuide = lazy(() => import("./pages/size-guide/size-guide"));
 const Cookies = lazy(() => import("./pages/cookies/cookies"));
 const RefundPolicy = lazy(() => import("./pages/refund-policy/refund-policy"));
+const Cart = lazy(() => import("./pages/cart/cart"));
+const Checkout = lazy(() => import("./pages/checkout/checkout"));
 const logoImage ="s"
 const Router = () => {
   const routes = [
@@ -40,6 +42,8 @@ const Router = () => {
     {path: "/size-guide", element: <SizeGuide />},
     {path: "/cookies", element: <Cookies />},
     {path: "/refund-policy", element: <RefundPolicy />},
+    {path: "/cart", element: <Cart />},
+    {path: "/checkout", element: <Checkout />},
   ];
 
   return (

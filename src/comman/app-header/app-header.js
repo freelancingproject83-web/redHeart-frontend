@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, User, ShoppingBag, Menu, X, ChevronDown } from "lucide-react";
 import logo from "../../assets/redHeartLogoo.png";
 
 export default function Header() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [cartCount, setCartCount] = useState(0); // You can connect this to your cart state
+  const [cartCount, setCartCount] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef(null);
@@ -24,6 +26,35 @@ export default function Header() {
       searchInputRef.current.focus();
     }
   }, [isSearchOpen]);
+
+  // Load cart count from localStorage
+  useEffect(() => {
+    const updateCartCount = () => {
+      try {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        setCartCount(totalItems);
+      } catch (error) {
+        console.error("Error loading cart count:", error);
+        setCartCount(0);
+      }
+    };
+
+    // Initial load
+    updateCartCount();
+
+    // Listen for cart updates
+    window.addEventListener("cartCountUpdated", updateCartCount);
+    window.addEventListener("storage", (e) => {
+      if (e.key === "cart") {
+        updateCartCount();
+      }
+    });
+
+    return () => {
+      window.removeEventListener("cartCountUpdated", updateCartCount);
+    };
+  }, []);
 
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -212,6 +243,7 @@ export default function Header() {
 
               {/* Shopping Cart */}
               <button
+                onClick={() => navigate("/cart")}
                 className="relative p-2.5 rounded-full text-black-charcoal hover:text-accent-rose-600 hover:bg-grey-50 transition-all duration-300 group"
                 aria-label="Shopping Cart"
               >
@@ -219,7 +251,7 @@ export default function Header() {
                 <span className="absolute inset-0 rounded-full bg-accent-rose-100/30 scale-0 group-hover:scale-100 transition-transform duration-300"></span>
                 {cartCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-gradient-to-br from-accent-rose-500 to-accent-pink-600 text-primary-white text-[10px] font-semibold rounded-full w-5 h-5 flex items-center justify-center shadow-soft border-2 border-primary-white">
-                    {cartCount}
+                    {cartCount > 99 ? "99+" : cartCount}
                   </span>
                 )}
               </button>
@@ -357,6 +389,10 @@ export default function Header() {
                 <span className="text-xs font-body font-medium">Search</span>
               </button>
               <button
+                onClick={() => {
+                  navigate("/cart");
+                  closeSidebar();
+                }}
                 className="flex flex-col items-center justify-center space-y-2 px-3 py-4 bg-gradient-to-br from-grey-50 to-grey-100/50 hover:from-accent-rose-50 hover:to-accent-pink-50 rounded-xl transition-all duration-300 text-grey-700 hover:text-accent-rose-600 group relative"
                 aria-label="Cart"
               >
@@ -364,7 +400,7 @@ export default function Header() {
                   <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
                   {cartCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-gradient-to-br from-accent-rose-500 to-accent-pink-600 text-primary-white text-[10px] font-semibold rounded-full w-4 h-4 flex items-center justify-center">
-                      {cartCount}
+                      {cartCount > 99 ? "99+" : cartCount}
                     </span>
                   )}
                 </div>
