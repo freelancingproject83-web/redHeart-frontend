@@ -25,6 +25,23 @@ import allFlowerComboImg from "../../assets/floral-image/all-flower-combo.avif";
 import congratulationImg from "../../assets/occasion-image/congratulation.jpg";
 import thankYouImg from "../../assets/occasion-image/thank-you.jpeg";
 import getWellSoonImg from "../../assets/occasion-image/get-well-soon.webp";
+
+import cake from "../../assets/category-image/cake.webp"
+import combo from "../../assets/category-image/combo.jpeg"
+import plant from "../../assets/category-image/plant.avif"
+
+import hero1 from "../../assets/hero-image/hero-image1.jpg"
+import hero2 from "../../assets/hero-image/hero-image-2.jpg"
+import hero3 from "../../assets/hero-image/hero-image3.jpg"
+import hero4 from "../../assets/hero-image/hero-image4.webp"
+
+import categoryBg from "../../assets/background/herobackgroundcat.jpg"
+import anniversary1 from "../../assets/category-image/anniversary-1.webp"
+import birthday1 from "../../assets/category-image/birthday.avif"
+import giftforher from "../../assets/category-image/giftforher.jpg"
+import giftforhim from "../../assets/category-image/giftforhim.jpg"
+
+
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -62,11 +79,16 @@ const Home = () => {
     { id: 2, title: "Thank You", image: thankYouImg },
     { id: 3, title: "Get Well Soon", image: getWellSoonImg },
   ];
-
+  const categories = [
+    { id: 1, title: "Anniversary", img: anniversary1 },
+    { id: 2, title: "Birthday", img: birthday1 },
+    { id: 3, title: "Gift for Her", img: giftforher },
+    { id: 4, title: "Gift for Him", img: giftforhim },
+  ];
   return (
     <div className="min-h-screen bg-primary-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[85vh] lg:h-[90vh] overflow-hidden">
+      {/* <section className="relative h-[70vh] md:h-[85vh] lg:h-[90vh] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={loveAffectionImg}
@@ -99,45 +121,162 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section> */}
+      {/* Small Posters Carousel */}
+      {/* Small Posters Carousel */}
+      <section className="py-8 bg-white">
+
+
+        <div className="overflow-x-auto flex gap-5 px-4 sm:px-6 lg:px-8 scroll-smooth snap-x snap-mandatory">
+          {[hero1, hero2, hero3, hero4].map((item) => (
+            <div
+              key={item}
+              className="
+          min-w-[220px]          /* mobile */
+          sm:min-w-[280px]       /* tablet */
+          lg:min-w-[430px]       /* laptop = 2.5 visible */
+          snap-center 
+          shrink-0 
+          rounded-2xl 
+          overflow-hidden 
+          shadow-lg
+        "
+            >
+              <img
+                src={item}
+                alt="Poster"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Collections Section */}
-      <section id="collections" className="py-8 sm:py-12 md:py-24 lg:py-32 bg-primary-white">
+
+      <section className="py-8 bg-gradient-to-b from-white to-grey-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black-charcoal mb-3 sm:mb-4">
+
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <span className="inline-block px-5 py-2 bg-primary-white/90 border border-grey-300/40 rounded-full shadow-sm backdrop-blur-md font-body text-xs tracking-[0.18em] text-grey-700 uppercase">
+              Explore Categories
+            </span>
+
+
+          </div>
+
+          {/* Category Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { title: "Cakes", img: cake },
+              { title: "Flowers", img: loveAffectionImg },
+              { title: "Plants", img: plant },
+              { title: "Combos", img: combo },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="group relative rounded-3xl overflow-hidden shadow-elegant hover:shadow-premium cursor-pointer transition-all duration-300"
+              >
+                {/* Image */}
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-52 sm:h-60 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+
+                {/* Title */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
+                  <h3 className="font-display text-lg sm:text-xl text-primary-white font-light tracking-wide">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-b from-pink-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl text-center mb-10 text-black-600 font-body">
+            Shop By Occasions & Relations
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories.map((category) => (
+              <div
+                key={category.id}
+                className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer transform transition-all duration-500 hover:scale-105"
+              >
+                {/* Image */}
+                <img
+                  src={category.img}
+                  alt={category.title}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Text */}
+                <h3 className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-lg">
+                  {category.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Collections Section */}
+
+
+      <section
+        id="collections"
+        className="relative py-8 sm:py-24 md:py-32 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${categoryBg})`,
+        }}
+      >
+        {/* Overlay for soft effect */}
+        <div className="absolute inset-0 bg-white/20"></div>
+
+        {/* Content wrapper */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black-charcoal mb-4">
               Our Collections
             </h2>
-            <p className="font-body text-grey-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+            <p className="font-body text-grey-700 text-base md:text-lg max-w-2xl mx-auto">
               Curated with passion, designed with elegance
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+
+          {/* Collections Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {collections.map((collection) => (
               <div
                 key={collection.id}
-                
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
+                onClick={() => navigate(`/product/${collection.title}`)}
               >
-                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${collection.title}`)}>
+                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden">
                   <img
                     src={collection.image}
                     alt={collection.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 md:transform md:translate-y-4 md:group-hover:translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500">
-                    <p className="font-body text-xs sm:text-sm text-primary-white/95 font-light hidden md:block">{collection.description}</p>
-                  </div>
                 </div>
-                <div className="p-3 sm:p-4 md:p-6 lg:p-8 border-t border-grey-100">
-                  <h3 className="font-display text-sm sm:text-base md:text-xl lg:text-2xl font-light text-black-charcoal mb-2 md:mb-3 group-hover:text-accent-rose-600 transition-colors duration-300 tracking-tight">
+                <div className="p-4 md:p-6 lg:p-8">
+                  <h3 className="font-display text-lg md:text-xl font-light text-black-charcoal mb-2 group-hover:text-accent-rose-600 transition-colors duration-300">
                     {collection.title}
                   </h3>
-                  <div className="flex items-center text-accent-rose-600 gap-1 md:group-hover:gap-2 transition-all duration-300">
-                    <span className="font-body text-[10px] sm:text-xs uppercase tracking-wider font-light">Explore</span>
-                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:opacity-0 md:group-hover:opacity-100 md:transform md:-translate-x-2 md:group-hover:translate-x-0 transition-all duration-300" strokeWidth={2} />
-                  </div>
+                  <p className="font-body text-sm md:text-base text-grey-600">{collection.description}</p>
                 </div>
               </div>
             ))}
@@ -145,8 +284,11 @@ const Home = () => {
         </div>
       </section>
 
+
+
+
       {/* Blossoms By Hues Section */}
-      <section className="py-8 sm:py-12 md:py-24 lg:py-32 bg-grey-50">
+      <section className="py-8 sm:py-8 md:py-8 lg:py-8 bg-grey-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black-charcoal mb-4">
@@ -162,7 +304,7 @@ const Home = () => {
                 key={blossom.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-32 sm:h-40 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${blossom.title}`)}>
+                <div className="relative h-32 sm:h-40 md:h-80 overflow-hidden" onClick={() => navigate(`/product/${blossom.title}`)}>
                   <img
                     src={blossom.image}
                     alt={blossom.title}
@@ -187,7 +329,7 @@ const Home = () => {
       </section>
 
       {/* Shop by Flower Type Section */}
-      <section className="py-8 sm:py-12 md:py-24 lg:py-32 bg-primary-white">
+      <section className="py-8 sm:py-8 md:py-8 lg:py-8 bg-primary-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black-charcoal mb-4">
@@ -203,7 +345,7 @@ const Home = () => {
                 key={flower.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden"   onClick={() => navigate(`/product/${flower.title}`)}>
+                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden" onClick={() => navigate(`/product/${flower.title}`)}>
                   <img
                     src={flower.image}
                     alt={flower.title}
@@ -227,7 +369,7 @@ const Home = () => {
       </section>
 
       {/* Floral Assortments Section */}
-      <section className="py-8 sm:py-12 md:py-24 lg:py-32 bg-grey-50">
+      <section className="py-8 sm:py-12 md:py-24 lg:py-32 bg-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black-charcoal mb-4">
@@ -243,7 +385,7 @@ const Home = () => {
                 key={item.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden"   onClick={() => navigate(`/product/${item.title}`)}>
+                <div className="relative h-40 sm:h-48 md:h-80 overflow-hidden" onClick={() => navigate(`/product/${item.title}`)}>
                   <img
                     src={item.image}
                     alt={item.title}
@@ -268,7 +410,7 @@ const Home = () => {
       </section>
 
       {/* Occasions Section */}
-      <section id="occasions" className="py-8 sm:py-12 md:py-24 lg:py-32 bg-primary-white">
+      <section id="occasions" className="py-8 sm:py-8 md:py-8 lg:py-8 bg-primary-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black-charcoal mb-4">
@@ -284,7 +426,7 @@ const Home = () => {
                 key={occasion.id}
                 className="group relative overflow-hidden bg-primary-white border border-grey-200 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden"   onClick={() => navigate(`/product/${occasion.title}`)}>
+                <div className="relative h-40 sm:h-48 md:h-96 overflow-hidden" onClick={() => navigate(`/product/${occasion.title}`)}>
                   <img
                     src={occasion.image}
                     alt={occasion.title}
